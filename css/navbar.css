@@ -6,7 +6,8 @@
 }
 
 /* Navbar Brand ICON & NAME */
-.navbar .navbar-brand {
+.navbar .navbar-brand,
+.navbar .nav-item {
     display: flex;
     align-items: center;
 }
