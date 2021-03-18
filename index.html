@@ -19,6 +19,9 @@
     <!-- || AOS Library -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
     <!-- || Custom CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/navbar.css" />
@@ -28,10 +31,11 @@
 </head>
 
 <body onscroll="checkWidthDoAnime()">
+
     <!-- || Navbar Section Start -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" data-aos="fade-right">
+            <a class="navbar-brand" href="#" data-aos="fade-right" data-delay="50">
                 <img src="./img/brandLogo.png" alt="Donate Today" />
                 <span>Make Connections</span>
             </a>
@@ -41,7 +45,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pe-4" data-aos="fade-left">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pe-4" data-aos="fade-left" data-delay="50">
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-current="page" href="#donate">
                             <img src="./img/icon/user.svg" class="profile_icon" alt="Profile Icon" />
@@ -74,7 +78,7 @@
                 <div data-aos="fade-up">
                     <h5 class="banner_heading">Make Connections, Have Relations<br /> Keep Happiness</h5>
                     <form>
-                        <a href="#" class="google media_btn" onclick="loginWithGoogle();">
+                        <!-- <a href="#" class="google media_btn" onclick="loginWithGoogle();">
                             <i class="fa fa-google fa-fw"></i> Login with Google+
                         </a>
                         <a href="#" class="fb media_btn">
@@ -82,14 +86,20 @@
                         </a>
                         <a href="#" class="twitter media_btn">
                             <i class="fa fa-twitter fa-fw"></i> Login with Twitter
-                        </a>
+                        </a> -->
+                        <h1>Welcome to My Awesome App</h1>
+                        <div id="firebaseui-auth-container"></div>
+                        <div id="loader">Loading...</div>
                     </form>
+
+                    
                 </div>
             </div>
         </div>
     </main>
     <!-- || Banner & Payment Section End -->
 
+    
 
     <!-- || Assurances Start -->
     <section id="assurance">
@@ -371,35 +381,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"
         defer></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" defer></script>
-
     <script src="https://use.fontawesome.com/adec49eb3c.js"></script>
 
-    <!-- AOS Library -->
+    <!-- AOS.js Library -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-    <!-- Sweetalert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Sweetalert.js -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" async></script>
 
-    <!-- Index -->
+    <!-- UI Interactivity -->
     <script src="./js/index.js" async></script>
 
     <!-- Analysis Count -->
     <script src="./js/analysisCount.js" defer></script>
 
+
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use -->
-    <script src="https://firebase.google.com/docs/web/setup#available-libraries"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
 
     <!-- Firebase Login Script -->
+    <script src="./js/firebase.js" defer></script>
     <script src="./js/login.js" defer></script>
 
     <script>

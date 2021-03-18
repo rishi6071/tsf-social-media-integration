@@ -1,43 +1,38 @@
-// Login by Google Sign-in
-const loginWithGoogle = () => {
+// It's a Self-Invoking Function to Initialise Firebase Auth UI
+(() => {
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
-    // [START auth_google_provider_create]
-    var provider = new firebase.auth.GoogleAuthProvider();
-    // [END auth_google_provider_create]
+    var uiConfig = {
+        callbacks: {
+            signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+                // User successfully signed in.
+                // Return type determines whether we continue the redirect automatically
+                // or whether we leave that to developer to handle.
+                return true;
+            },
+            uiShown: function () {
+                // The widget is rendered.
+                // Hide the loader.
+                document.getElementById('loader').style.display = 'none';
+            }
+        },
+        // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+        signInFlow: 'popup',
+        signInSuccessUrl: 'index.html',
+        signInOptions: [
+            // Leave the lines as is for the providers you want to offer your users.
+            firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+        ],
+        // Terms of service url.
+        tosUrl: 'index.html',
+        // Privacy policy url.
+        privacyPolicyUrl: 'index.html'
+    };
 
-    // [START auth_google_provider_scopes]
-    provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-
-    firebase.auth().languageCode = 'en';
-    // To apply the default browser preference instead of explicitly setting it.
-    // firebase.auth().useDeviceLanguage();
-
-    // [START auth_google_provider_params]
-    provider.setCustomParameters({
-        'login_hint': 'user@example.com'
-    });
-    // [END auth_google_provider_params]
-
-    // Sign-in with Popup Window
-    firebase.auth()
-        .signInWithPopup(provider)
-        .then((result) => {
-            /** @type {firebase.auth.OAuthCredential} */
-            var credential = result.credential;
-
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            var token = credential.accessToken;
-            // The signed-in user info.
-            var user = result.user;
-            // ...
-        }).catch((error) => {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
-            // ...
-        });
-}
+    // The start method will wait until the DOM is loaded.
+    ui.start('#firebaseui-auth-container', uiConfig);
+})()
