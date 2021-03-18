@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com" />
 
     <!-- || title tag & tab icon -->
     <title>TSF - Social Media Integration</title>
@@ -47,6 +48,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#assurance">Assurance</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#analysis">Active_Users</a>
                     </li>
                     <li class="nav-item">
@@ -69,14 +73,16 @@
             <div class="overlay">
                 <div data-aos="fade-up">
                     <h5 class="banner_heading">Make Connections, Have Relations<br /> Keep Happiness</h5>
-                    <p class="banner_text">“Social media is not a media. The key is to listen, engage, and build relationships.”
-                        <br />
-                        <span class="banner_text_author">- David Alston</span>
-                    </p>
-                    <!-- <button id="rzp-button1">Pay</button> -->
                     <form>
-                        <script src="https://checkout.razorpay.com/v1/payment-button.js"
-                            data-payment_button_id="pl_GirWYnFJGpAxry" id="razorpay_donate_button" async> </script>
+                        <a href="#" class="google media_btn" onclick="loginWithGoogle();">
+                            <i class="fa fa-google fa-fw"></i> Login with Google+
+                        </a>
+                        <a href="#" class="fb media_btn">
+                            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                        </a>
+                        <a href="#" class="twitter media_btn">
+                            <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                        </a>
                     </form>
                 </div>
             </div>
@@ -99,7 +105,7 @@
                         <img src="./img/assurance/trustable.png" alt="Trustable Assurance" />
                     </div>
                     <div class="assurance_content">
-                        <p>200+ NGOs analyze for Transparency & Credibility</p>
+                        <p>2M+ Users analyzed us for Transparency & Credibility</p>
                     </div>
                 </div>
                 <div class="assurance_item" id="item2" data-aos="fade-up">
@@ -115,7 +121,7 @@
                         <img src="./img/assurance/experience.png" alt="Experience Assurance" />
                     </div>
                     <div class="assurance_content">
-                        <p>Lowest cost of fundraising exprensed in India</p>
+                        <p>Lowest cost to make connections in India</p>
                     </div>
                 </div>
             </div>
@@ -129,20 +135,19 @@
         <div class="mt-5 banner_box" data-aos="fade-up">
             <img src="./img/banner/quotesBanner.jpg" alt="Social Work" />
             <div class="overlay">
-                <p class="banner_text" data-aos="fade-up-right">“We ourselves feel that what we are doing is just a drop
-                    in the ocean.
+                <p class="banner_text" data-aos="fade-up-right">“Social media is the ultimate equaliser.
                     <br />
-                    But the ocean would be less because of that missing drop.”
+                    It gives a voice and a platform to anyone willing to engage.”
                     <br />
-                    <span class="banner_text_author">- Mother Teresa</span>
+                    <span class="banner_text_author">- Amy Jo Martin, Founder and CEO of Digital Royalty</span>
                 </p>
 
                 <p class="banner_text" data-aos="fade-up-left">
-                    “We can change the world and make it a better place.
+                    “Social Media is about the people! Not about your business.
                     <br />
-                    It is in our hands to make a difference.”
+                    Provide for the people and the people will provide for you.”
                     <br />
-                    <span class="banner_text_author">- Nelson Mandela</span>
+                    <span class="banner_text_author">- Matt Goulart, Founder, Ignite Digital</span>
                 </p>
             </div>
         </div>
@@ -162,17 +167,17 @@
                 <div class="analysis_item" data-aos="fade-right" data-delay="150">
                     <h5 class="analysis_term">Facebook</h5>
                     <img src="./img/icon/facebook.svg" alt="Facebook" />
-                    <h3 class="analysis_count"><span data-count="2">0</span> Billion</h3>
+                    <h3 class="analysis_count"><span data-count="2000">0</span> Million</h3>
                 </div>
                 <div class="analysis_item" data-aos="fade-up">
                     <h5 class="analysis_term">Youtube</h5>
                     <img src="./img/icon/youtube.svg" alt="Youtube" />
-                    <h3 class="analysis_count"><span data-count="1.5">0</span> Billion</h3>
+                    <h3 class="analysis_count"><span data-count="1500">0</span> Million</h3>
                 </div>
                 <div class="analysis_item" data-aos="fade-up" data-delay="250">
                     <h5 class="analysis_term">Whatsapp</h5>
                     <img src="./img/icon/whatsapp.svg" alt="Whatsapp" />
-                    <h3 class="analysis_count"><span data-count="1.2">0</span> Billion</h3>
+                    <h3 class="analysis_count"><span data-count="1200">0</span> Million</h3>
                 </div>
                 <div class="analysis_item" data-aos="fade-left">
                     <h5 class="analysis_term">Instagram</h5>
@@ -287,7 +292,8 @@
                                     yourself before you decide. What is it you’re hoping to get from social media? What
                                     information do you want to share? Which site, if any, is right for you?
                                     <br /><br />
-                                    - Social media can help you connect with others, learn about new topics, find help on
+                                    - Social media can help you connect with others, learn about new topics, find help
+                                    on
                                     certain issues, and raise awareness for worthy causes. Yet it can take up your time,
                                     risk your privacy, and have consequences for your wellbeing. You need to find
                                     balance between all of these factors if you’re considering setting up an account.
@@ -370,6 +376,8 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" defer></script>
 
+    <script src="https://use.fontawesome.com/adec49eb3c.js"></script>
+
     <!-- AOS Library -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
@@ -377,19 +385,27 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Index -->
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js" async></script>
 
     <!-- Analysis Count -->
     <script src="./js/analysisCount.js" defer></script>
 
-    <!-- Razorpay Payment -->
-    <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
-    <script src="./js/razorpay.js" defer></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/8.3.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://firebase.google.com/docs/web/setup#available-libraries"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <!-- Firebase Login Script -->
+    <script src="./js/login.js" defer></script>
 
     <script>
         AOS.init({
             delay: 100,
-            duration: 500,
+            duration: 1000,
             easing: 'ease-in-out',
             once: true
         });
