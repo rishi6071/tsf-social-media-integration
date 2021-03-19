@@ -92,10 +92,10 @@
                     </div>
 
                     <div class="row" id="user_info" style="display: none;">
-                        <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-12 user_details_box" data-aos="fade-up">
+                        <div class="col-12 user_details_box" data-aos="fade-up">
                             <div class="row">
-                                <img src="" class="user_profile_img" id="user_img"
-                                    alt="" />
+                                <img src="./img/icon/profile.png" class="user_profile_img" id="user_img"
+                                    alt="Profile" />
                                 <h3 class="user_profile_name">Welcome, <span id="user_name">User</span></h3>
                             </div>
 
@@ -451,6 +451,8 @@
                 alert('User signed out.');
                 document.querySelector('#user_info').style.display = "none";
                 document.querySelector('#signin_user').style.display = "block";
+                document.querySelector('#profile_icon').src = "./img/icon/user.svg";
+                document.querySelector('#profile_icon').alt = "Profile Icon";
             });
         }
     </script>

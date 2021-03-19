@@ -12,12 +12,6 @@
     border-radius: 50%;
 }
 
-@media screen and (max-width: 576px) {
-    .user_profile_img {
-        width: 150px !important;
-    }
-}
-
 .user_profile_name {
     text-align: center;
     margin-top: 10px;
@@ -44,4 +38,25 @@ table td {
 .signout_btn:hover {
     background: rgb(91, 102, 114);
     color: white;
+}
+
+/* Media Queries */
+@media screen and (max-width: 576px) {
+    .user_profile_img {
+        width: 150px !important;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .user_details_box {
+        width: 80% !important;
+        margin: auto !important;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .user_details_box {
+        width: 60% !important;
+        margin: auto !important;
+    }
 }
