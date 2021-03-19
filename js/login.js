@@ -9,6 +9,14 @@ function onSignIn(googleUser) {
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
+    const userInfo = {
+        ID: profile.getId(),
+        Name: profile.getName(),
+        ImageUrl: profile.getImageUrl(),
+        Email: profile.getEmail()
+    };
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+
     document.querySelector('#user_name').innerText = profile.getName();
     document.querySelector('#userId').innerText = profile.getId();
     document.querySelector('#userName').innerText = profile.getName();
@@ -39,6 +47,7 @@ function signOut() {
     location.href = "index.html";
 }
 
+// Redirect user when clicks on Sign in with Google
 const redirectUser = () => {
     if (confirmation == true) {
         // Redirecting to user.html Page
