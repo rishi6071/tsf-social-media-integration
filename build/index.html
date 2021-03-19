@@ -77,7 +77,7 @@
     <!-- || Banner & Payment Section Start -->
     <main id="donate">
         <div class="banner_box">
-            <img src="./img/banner/banner.jpg" alt="Banner Image" />
+            <img src="./img/banner/banner.jpg" id="banner_image" alt="Banner Image" />
             <div class="overlay">
                 <div data-aos="fade-up">
                     <div class="row" id="signin_user" style="display: block;">
@@ -451,8 +451,10 @@
                 alert('User signed out.');
                 document.querySelector('#user_info').style.display = "none";
                 document.querySelector('#signin_user').style.display = "block";
-                document.querySelector('#profile_icon').src = "./img/icon/user.svg";
-                document.querySelector('#profile_icon').alt = "Profile Icon";
+                document.querySelector('#home_profile_icon').src = "https://pics.freeicons.io/uploads/icons/png/4080540331548233623-512.png";
+                document.querySelector('#home_profile_icon').alt = "Profile Icon";
+                document.querySelector('#user_img').src = "https://pics.freeicons.io/uploads/icons/png/4080540331548233623-512.png";
+                document.querySelector('#user_img').alt = "Profile Icon";
             });
         }
     </script>

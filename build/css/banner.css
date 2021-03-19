@@ -52,7 +52,7 @@
 
 /* Media Queries for Banner  */
 @media screen and (max-width: 992px) {
-    .banner_box img {
+    .banner_box #banner_image {
         width: 100%;
         height: 450px;
     }
