@@ -10,22 +10,14 @@ function onSignIn(googleUser) {
     document.querySelector('#signin_user').style.display = "none";
     document.querySelector('#user_info').style.display = "block";
 
-    document.querySelector('#user_name').innerText = profile.getName();
-    document.querySelector('#userId').innerText = profile.getId();
-    document.querySelector('#userName').innerText = profile.getName();
-    document.querySelector('#userMailId').innerText = profile.getEmail();
+    document.querySelector('#user_name').textContent = profile.getName();
+    document.querySelector('#userId').textContent = profile.getId();
+    document.querySelector('#userName').textContent = profile.getName();
+    document.querySelector('#userMailId').textContent = profile.getEmail();
 
     const homeProfileIcon = document.querySelector('#home_profile_icon');
     homeProfileIcon.src = profile.getImageUrl();
     homeProfileIcon.alt = profile.getName();
-}
-
-// Google Sign-out Method
-function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-        alert('User signed out.');
-    });
 }
 
 // It's a Self-Invoking Function to Initialise Firebase Auth UI

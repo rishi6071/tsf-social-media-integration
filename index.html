@@ -442,6 +442,16 @@
     <!-- Google Sign-in -->
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="./js/login.js" defer></script>
+    
+    <script>
+        // Google Sign-out Method
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                alert('User signed out.');
+            });
+        }
+    </script>
 </body>
 
 </html>
