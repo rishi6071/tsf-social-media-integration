@@ -15,6 +15,7 @@ function onSignIn(googleUser) {
         ImageUrl: profile.getImageUrl(),
         Email: profile.getEmail()
     };
+    
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
     document.querySelector('#user_name').innerText = profile.getName();
