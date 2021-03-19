@@ -1,9 +1,5 @@
 @charset "utf-8";
 
-.user_details_box {
-    background: rgba(0, 0, 0, 0.08);
-}
-
 .user_profile_img {
     display: block;
     margin: auto;
@@ -16,13 +12,12 @@
     text-align: center;
     margin-top: 10px;
     font-family: 'Akaya Telivigala', cursive;
-    color: rebeccapurple !important;
+    color: rebeccapurple;
     text-transform: capitalize;
 }
 
 table th,
 table td {
-    color: rgba(0, 0, 0, 0.68) !important;
     letter-spacing: 0.8px;
 }
 
