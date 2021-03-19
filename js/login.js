@@ -15,27 +15,16 @@ function onSignIn(googleUser) {
         ImageUrl: profile.getImageUrl(),
         Email: profile.getEmail()
     };
-    
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
-    document.querySelector('#user_name').innerText = profile.getName();
-    document.querySelector('#userId').innerText = profile.getId();
-    document.querySelector('#userName').innerText = profile.getName();
-    document.querySelector('#userMailId').innerText = profile.getEmail();
-
-    const image = document.querySelector('#user_img');
-    image.src = profile.getImageUrl();
-    image.alt = profile.getName();
-
-    const navbarImage = document.querySelector('#profile_icon');
-    navbarImage.src = profile.getImageUrl();
-    navbarImage.alt = profile.getName();
-
-    const homeProfileIcon = document.querySelector('#home_profile_icon');
-    homeProfileIcon.src = profile.getImageUrl();
-    homeProfileIcon.alt = profile.getName();
-
     confirmation = true;
+    if (confirmation == true) {
+        // Redirecting to user.html Page
+        location.href = "user.html";
+
+        // Show User Info
+        setTimeout(showUserInfo, 1000);
+    }
 }
 
 // Google Sign-out Method
@@ -48,12 +37,26 @@ function signOut() {
     location.href = "index.html";
 }
 
-// Redirect user when clicks on Sign in with Google
-const redirectUser = () => {
-    if (confirmation == true) {
-        // Redirecting to user.html Page
-        location.href = "user.html";
-    }
+// Show UserInfo
+const showUserInfo = () => {
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
+    document.querySelector('#user_name').innerText = userInfo.Name;
+    document.querySelector('#userId').innerText = userInfo.ID;
+    document.querySelector('#userName').innerText = userInfo.Name;
+    document.querySelector('#userMailId').innerText = userInfo.Email;
+
+    const image = document.querySelector('#user_img');
+    image.src = userInfo.ImageUrl;
+    image.alt = userInfo.Name;
+
+    const navbarImage = document.querySelector('#profile_icon');
+    navbarImage.src = userInfo.ImageUrl;
+    navbarImage.alt = userInfo.Name;
+
+    const homeProfileIcon = document.querySelector('#home_profile_icon');
+    homeProfileIcon.src = userInfo.ImageUrl;
+    homeProfileIcon.alt = userInfo.Name;
 }
 
 // It's a Self-Invoking Function to Initialise Firebase Auth UI
