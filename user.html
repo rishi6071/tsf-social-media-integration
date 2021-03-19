@@ -25,18 +25,16 @@
     <!-- || Custom CSS -->
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/navbar.css" />
-    <link rel="stylesheet" href="./css/banner.css" />
-    <link rel="stylesheet" href="./css/assurance.css" />
-    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/user.css" />
 </head>
 
-<body onscroll="checkWidthDoAnime()">
+<body>
 
     <!-- || Navbar Section Start -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" data-aos="fade-right" data-delay="50">
-                <img src="./img/brandLogo.png" alt="Donate Today" />
+            <a class="navbar-brand" href="./index.html" data-aos="fade-right" data-delay="50">
+                <img src="./img/brandLogo.png" alt="Make Connections" />
                 <span>Make Connections</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -47,21 +45,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pe-4" data-aos="fade-left" data-delay="50">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./user.html">
-                            <img src="./img/icon/user.svg" class="profile_icon" alt="Profile Icon" />
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#assurance">Assurance</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#analysis">Active_Users</a>
+                        <a class="nav-link" aria-current="page" href="./index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#faqs">FAQS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#contactus">Contact</a>
+                        <a class="nav-link" aria-current="page" href="./user.html">
+                            <img src="./img/Rishi_Soni_Profile.jpg" class="profile_icon" alt="Profile Icon" />
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -70,9 +62,57 @@
     <!-- || Navbar Section End -->
 
 
+    <!-- || User Profile Section Start -->
+    <main>
+        <div class="container">
+            <h2 class="section_heading pb-3" data-aos="fade-up">
+                <span>User Profile</span>
+                <span></span>
+            </h2>
+
+            <div class="row">
+                <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-12 user_details_box" data-aos="fade-up">
+                    <div class="p-md-4 p-2">
+                        <img src="./img/Rishi_Soni_Profile.jpg" class="user_profile_img" id="user_img" alt="User" />
+                        <h3 class="user_profile_name">Welcome, <span id="user_name">User</span></h3>
+
+                        <div class="row">
+                            <div class="col-lg-10 offset-lg-1">
+                                <table class="table text-center table-bordered table-striped mt-4">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Profile Id</th>
+                                            <td id="userId">116649839898423387284</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Name</th>
+                                            <td id="userName">The Gaming Zone</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Email</th>
+                                            <td id="userMailId">sumitatc511@gmail.com</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-10 offset-lg-1">
+                                <a href="#" class="btn px-3 signout_btn" onclick="signOut();">Sign out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- || User Profile Section End -->
+
+
     <!-- || FAQs Section Start -->
     <section id="faqs">
-        <div class="container">
+        <div class="container mb-5">
             <h2 class="section_heading pb-4" data-aos="fade-up">
                 <span>FAQs</span>
                 <span></span>
@@ -81,7 +121,7 @@
             <div class="row">
                 <div class="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-12" id="faq_box">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item" data-aos="fade-up-right">
+                        <div class="accordion-item" data-aos="fade-up">
                             <h2 class="accordion-header" id="flush-headingOne">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
@@ -100,7 +140,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item" data-aos="fade-up-left">
+                        <div class="accordion-item" data-aos="fade-up">
                             <h2 class="accordion-header" id="flush-headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseTwo" aria-expanded="false"
@@ -120,7 +160,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item" data-aos="fade-up-right">
+                        <div class="accordion-item" data-aos="fade-up">
                             <h2 class="accordion-header" id="flush-headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseThree" aria-expanded="false"
@@ -138,7 +178,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item" data-aos="fade-up-left">
+                        <div class="accordion-item" data-aos="fade-up">
                             <h2 class="accordion-header" id="flush-headingFour">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseFour" aria-expanded="false"
@@ -157,7 +197,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item" data-aos="fade-up-right">
+                        <div class="accordion-item" data-aos="fade-up">
                             <h2 class="accordion-header" id="flush-headingFive">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseFive" aria-expanded="false"
@@ -221,22 +261,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
     <!-- Firebase Login Script -->
     <script src="./js/firebase.js" defer></script>
     <script src="./js/login.js" defer></script>
-
-    <script>
-        AOS.init({
-            delay: 100,
-            duration: 1000,
-            easing: 'ease-in-out',
-            once: true
-        });
-    </script>
 </body>
 
-<!-- 5929886214 -->
 </html>

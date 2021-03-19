@@ -1,3 +1,13 @@
+// AOS Library Configuration
+(() => {
+    AOS.init({
+        delay: 100,
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true
+    });
+})()
+
 // Animation Changing according to width
 const checkWidthDoAnime = () => {
     // console.log(window.outerWidth);
@@ -11,7 +21,6 @@ const checkWidthDoAnime = () => {
 
 // Contact Form
 const contactUs = (event) => {
-
     const userName = document.querySelector('#contactName');
     const userEmail = document.querySelector('#contactEmail');
     const userSubject = document.querySelector('#contactSubject');

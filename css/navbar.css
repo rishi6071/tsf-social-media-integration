@@ -44,6 +44,7 @@ a.nav-link:hover {
 /* User Profile Icon */
 .navbar img.profile_icon {
     width: 35px;
+    border-radius: 50%;
 }
 
 @media screen and (max-width: 400px) {
