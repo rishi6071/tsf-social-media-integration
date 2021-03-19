@@ -16,13 +16,13 @@
     text-align: center;
     margin-top: 10px;
     font-family: 'Akaya Telivigala', cursive;
-    color: rebeccapurple;
+    color: rebeccapurple !important;
     text-transform: capitalize;
 }
 
 table th,
 table td {
-    color: rgba(0, 0, 0, 0.68);
+    color: rgba(0, 0, 0, 0.68) !important;
     letter-spacing: 0.8px;
 }
 
