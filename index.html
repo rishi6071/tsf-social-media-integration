@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com" />
+    <meta name="google-signin-client_id" content="391535410711-iu6ehh6h8d07f058kgrk60s84320dc7h.apps.googleusercontent.com" />
 
     <!-- || title tag & tab icon -->
     <title>TSF - Social Media Integration</title>
@@ -90,6 +90,8 @@
                         <div id="firebaseui-auth-container"></div>
                         <div id="loader">Loading...</div>
 
+                        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                        <a href="#" onclick="signOut();">Sign out</a>
                     </form>
                 </div>
             </div>
@@ -406,6 +408,9 @@
     <!-- Firebase Login Script -->
     <script src="./js/firebase.js" defer></script>
     <script src="./js/login.js" defer></script>
+
+    <!-- Google Sign-in -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <script>
         AOS.init({
