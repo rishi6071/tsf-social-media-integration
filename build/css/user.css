@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+.user_details_box {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.user_profile_img {
+    display: block;
+    margin: auto;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.user_profile_name {
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Akaya Telivigala', cursive;
+    color: rebeccapurple;
+    text-transform: capitalize;
+}
+
+table th {
+    color: darkslategray;
+    letter-spacing: 0.8px;
+}
+
+.signout_btn {
+    margin-top: 10px;
+    background: lightslategray;
+    display: block;
+    border-radius: 1px;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.signout_btn:hover {
+    background: rgb(91, 102, 114);
+    color: white;
+}
