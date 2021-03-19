@@ -6,7 +6,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-signin-client_id" content="391535410711-iu6ehh6h8d07f058kgrk60s84320dc7h.apps.googleusercontent.com" />
+    <meta name="google-signin-client_id"
+        content="391535410711-iu6ehh6h8d07f058kgrk60s84320dc7h.apps.googleusercontent.com" />
 
     <!-- || title tag & tab icon -->
     <title>TSF - Social Media Integration</title>
@@ -413,6 +414,23 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                alert('User signed out.');
+            });
+        }
+    </script>
+
+    <script>
         AOS.init({
             delay: 100,
             duration: 1000,
@@ -422,5 +440,4 @@
     </script>
 </body>
 
-<!-- 5929886214 -->
 </html>
