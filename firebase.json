@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/tsf-social-media-integration",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
