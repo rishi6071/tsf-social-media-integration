@@ -1,3 +1,5 @@
+var confirmation = false;
+
 // Google Sign-in Method
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
@@ -6,9 +8,6 @@ function onSignIn(googleUser) {
     console.log('Name: ' + profile.getName());
     console.log('Image URL: ' + profile.getImageUrl());
     console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-
-    // Redirecting to user.html Page
-    location.href = "user.html";
 
     document.querySelector('#user_name').innerText = profile.getName();
     document.querySelector('#userId').innerText = profile.getId();
@@ -22,16 +21,29 @@ function onSignIn(googleUser) {
     const navbarImage = document.querySelector('#profile_icon');
     navbarImage.src = profile.getImageUrl();
     navbarImage.alt = profile.getName();
+
+    const homeProfileIcon = document.querySelector('#home_profile_icon');
+    homeProfileIcon.src = profile.getImageUrl();
+    homeProfileIcon.alt = profile.getName();
+
+    confirmation = true;
 }
 
 // Google Sign-out Method
 function signOut() {
+    alert("Nope");
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
         alert('User signed out.');
     });
-
     location.href = "index.html";
+}
+
+const redirectUser = () => {
+    if (confirmation == true) {
+        // Redirecting to user.html Page
+        location.href = "user.html";
+    }
 }
 
 // It's a Self-Invoking Function to Initialise Firebase Auth UI
