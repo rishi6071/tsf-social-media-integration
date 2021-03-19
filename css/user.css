@@ -7,7 +7,7 @@
 .user_profile_img {
     display: block;
     margin: auto;
-    width: 200px;
+    width: 300px !important;
     border-radius: 50%;
 }
 
@@ -15,12 +15,13 @@
     text-align: center;
     margin-top: 10px;
     font-family: 'Akaya Telivigala', cursive;
-    color: rebeccapurple;
+    color: mediumpurple;
     text-transform: capitalize;
 }
 
-table th {
-    color: darkslategray;
+table th,
+table td {
+    color: lightgrey;
     letter-spacing: 0.8px;
 }
 
