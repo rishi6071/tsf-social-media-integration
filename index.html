@@ -449,6 +449,8 @@
             var auth2 = gapi.auth2.getAuthInstance();
             auth2.signOut().then(function () {
                 alert('User signed out.');
+                document.querySelector('#user_info').style.display = "none";
+                document.querySelector('#signin_user').style.display = "block";
             });
         }
     </script>

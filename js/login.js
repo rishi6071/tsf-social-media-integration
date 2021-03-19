@@ -14,6 +14,10 @@ function onSignIn(googleUser) {
     document.querySelector('#userId').textContent = profile.getId();
     document.querySelector('#userName').textContent = profile.getName();
     document.querySelector('#userMailId').textContent = profile.getEmail();
+    
+    const userImg = document.querySelector('#user_img');
+    userImg.src = profile.getImageUrl();
+    userImg.alt = profile.getName();
 
     const homeProfileIcon = document.querySelector('#home_profile_icon');
     homeProfileIcon.src = profile.getImageUrl();
