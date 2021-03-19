@@ -46,17 +46,3 @@ table td {
         width: 150px !important;
     }
 }
-
-@media screen and (min-width: 576px) {
-    .user_details_box {
-        width: 80% !important;
-        margin: auto !important;
-    }
-}
-
-@media screen and (min-width: 991px) {
-    .user_details_box {
-        width: 60% !important;
-        margin: auto !important;
-    }
-}
