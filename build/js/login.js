@@ -1,11 +1,6 @@
 // Google Sign-in Method
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
-    console.log(profile);
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 
     document.querySelector('#signin_user').style.display = "none";
     document.querySelector('#user_info').style.display = "block";
@@ -14,7 +9,7 @@ function onSignIn(googleUser) {
     document.querySelector('#userId').textContent = profile.getId();
     document.querySelector('#userName').textContent = profile.getName();
     document.querySelector('#userMailId').textContent = profile.getEmail();
-
+    
     const userImg = document.querySelector('#user_img');
     userImg.src = profile.getImageUrl();
     userImg.alt = profile.getName();
@@ -22,6 +17,8 @@ function onSignIn(googleUser) {
     const homeProfileIcon = document.querySelector('#home_profile_icon');
     homeProfileIcon.src = profile.getImageUrl();
     homeProfileIcon.alt = profile.getName();
+
+    console.log(`${location.href.substr(0, 44)}/#user_info_box`);
 }
 
 // It's a Self-Invoking Function to Initialise Firebase Auth UI
