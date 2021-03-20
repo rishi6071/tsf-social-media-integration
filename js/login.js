@@ -18,7 +18,8 @@ function onSignIn(googleUser) {
     homeProfileIcon.src = profile.getImageUrl();
     homeProfileIcon.alt = profile.getName();
 
-    console.log(`${location.href.substr(0, 44)}/#user_info_box`);
+    // Redirecting to User Info Box
+    location.href = `${location.href.substr(0, 44)}/#user_info_box`;
 }
 
 // It's a Self-Invoking Function to Initialise Firebase Auth UI
