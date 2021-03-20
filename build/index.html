@@ -83,7 +83,8 @@
                     <div class="row">
                         <h5 class="banner_heading">Make Connections, Have Relations<br /> Keep Happiness</h5>
 
-                        <p class="banner_text" data-aos="fade-up">“Social Media is addictive precisely because it gives us something which the real world lacks; 
+                        <p class="banner_text" data-aos="fade-up">“Social Media is addictive precisely because it gives
+                            us something which the real world lacks;
                             <br />
                             it gives us immediacy, direction, a and value as an individual
                             <br />
@@ -360,6 +361,12 @@
     <!-- || FAQs Section End -->
 
 
+    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+    </fb:login-button>
+
+    <div id="status">
+    </div>
+
     <!-- || Contact Us Section Start -->
     <section id="contactus">
         <div class="container-fluid mt-4 mb-5">
@@ -467,6 +474,10 @@
             });
         }
     </script>
+
+    <!-- Load the JS SDK asynchronously -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script src="./js/facebook.js" defer></script>
 </body>
 
 </html>
