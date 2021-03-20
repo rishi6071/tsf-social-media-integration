@@ -104,7 +104,7 @@ footer span {
   border: none;
   border-radius: 4px;
   margin: 5px 0;
-  opacity: 0.85;
+  opacity: 1;
   display: inline-block;
   font-size: 14px;
   line-height: 20px;
@@ -116,13 +116,14 @@ footer span {
 
 .media_btn:hover {
   color: white;
-  opacity: 1;
+  opacity: 0.85;
 }
 
 /* add appropriate colors to fb, twitter and google buttons */
 .fb {
-  background-color: #3b5998;
-  color: white;
+  background-color: #0281f8e0;
+  color: white !important;
+  font-weight: 500;
 }
 
 .fb .fa-facebook {
