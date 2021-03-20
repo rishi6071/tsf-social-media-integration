@@ -35,6 +35,7 @@ window.fbAsyncInit = function () {
 
 const loginWithFacebook = () => {
     FB.login((response) => {
+        console.log(response);
         if (response.status === 'connected') {   // Logged into your webpage and Facebook.
             testAPI();
         } else if(response.status === 'not_authorized') {  // Not logged into your webpage or we are unable to tell.
