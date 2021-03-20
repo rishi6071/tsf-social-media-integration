@@ -14,6 +14,4 @@ var app_firebase = {};
 
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-
-    console.log("Hello");
 })()
