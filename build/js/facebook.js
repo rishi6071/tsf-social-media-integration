@@ -1,13 +1,15 @@
 function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
-    console.log('statusChangeCallback');
-    console.log(response);                   // The current login status of the person.
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
         testAPI();
     } else if (response.status === 'not_authorized') {  // Not logged into your webpage or we are unable to tell.
         window.alert('Please log ' + 'into this webpage.');
     }
     else {
-        window.alert('You are not logged into Facebook.');
+        swal({
+            title: `Not Logged In!`,
+            text: `You are not logged into Facebook.`,
+            icon: 'warning'
+        });
     }
 }
 
@@ -33,25 +35,53 @@ window.fbAsyncInit = function () {
     });
 };
 
+// When User Clicks on Log in With Facebook Button
 const loginWithFacebook = () => {
     FB.login((response) => {
-        console.log(response);
         if (response.status === 'connected') {   // Logged into your webpage and Facebook.
             testAPI();
         } else if (response.status === 'not_authorized') {  // Not logged into your webpage or we are unable to tell.
             window.alert('Please log ' + 'into this webpage.');
         }
         else {
-            window.alert('You are not logged into Facebook.');
+            swal({
+                title: `Not Logged In!`,
+                text: `You are not logged into Facebook.`,
+                icon: 'warning'
+            });
         }
     });
 }
 
+// When User Clicks on Logout Button
+const logoutFromFacebook = () => {
+    FB.logout((response) => {
+        swal({
+            title: `Logged Out!`,
+            text: `User is Logged Out`,
+            icon: 'success'
+        });
+        
+        document.querySelector('#logout_fb').style.display = "none";
+        document.querySelector('#signin_user').style.display = "block";
+        document.querySelector('#user_info').style.display = "block";
+
+        // Redirecting to User Info Box
+        location.href = `${location.href.substr(0, 44)}/#user_info_box`;
+    });
+}
+
 function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
-    console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function (response) {
-        console.log(response);
-        console.log('Successful login for: ' + response.api);
-        window.alert('Thanks for logging in, ' + response.name + '!');
+        document.querySelector('#signin_user').style.display = "none";
+        document.querySelector('#user_info').style.display = "none";
+
+        document.querySelector('#fb_userName').textContent = response.name;
+        document.querySelector('#logout_fb').style.display = "block";
+        swal({
+            title: `Thanks for Logging in`,
+            text: `UserName: ${response.name}`,
+            icon: 'success'
+        });
     });
 }
