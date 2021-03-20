@@ -52,10 +52,14 @@
 
 /* Media Queries for Banner  */
 @media screen and (max-width: 992px) {
-    .banner_box #banner_image {
-        width: 100%;
-        height: 450px;
-    }
+  .banner_box #banner_image {
+    width: 100%;
+    height: 450px;
+  }
+  .banner_box #banner_social_image {
+    width: 100%;
+    height: 530px;
+  }
 }
 
 @media screen and (max-width: 450px) {
