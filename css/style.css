@@ -99,14 +99,14 @@ footer span {
 
 /***** Social Media Custom Button HTML & CSS Styling  */
 .media_btn {
-  /* width: 50%; */
-  padding: 12px;
+  width: 220px;
+  padding: 8px 12px;
   border: none;
   border-radius: 4px;
   margin: 5px 0;
   opacity: 0.85;
   display: inline-block;
-  font-size: 17px;
+  font-size: 14px;
   line-height: 20px;
   text-decoration: none; /* remove underline from anchors */
   -webkit-transition: 0.5s;
@@ -123,6 +123,12 @@ footer span {
 .fb {
   background-color: #3b5998;
   color: white;
+}
+
+.fb .fa-facebook {
+  font-size: 17px;
+  color: white !important;
+  vertical-align: -1.5px;
 }
 
 .twitter {

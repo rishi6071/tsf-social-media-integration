@@ -3,9 +3,11 @@ function statusChangeCallback(response) {  // Called with the results from FB.ge
     console.log(response);                   // The current login status of the person.
     if (response.status === 'connected') {   // Logged into your webpage and Facebook.
         testAPI();
-    } else {                                 // Not logged into your webpage or we are unable to tell.
-        document.getElementById('status').innerHTML = 'Please log ' +
-            'into this webpage.';
+    } else if(response.status === 'not_authorized') {  // Not logged into your webpage or we are unable to tell.
+        window.alert('Please log ' + 'into this webpage.');
+    }
+    else {
+        window.alert('You are not logged into Facebook.');
     }
 }
 
@@ -31,11 +33,23 @@ window.fbAsyncInit = function () {
     });
 };
 
+const loginWithFacebook = () => {
+    FB.login((response) => {
+        if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+            testAPI();
+        } else if(response.status === 'not_authorized') {  // Not logged into your webpage or we are unable to tell.
+            window.alert('Please log ' + 'into this webpage.');
+        }
+        else {
+            window.alert('You are not logged into Facebook.');
+        }
+    });
+}
+
 function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function (response) {
         console.log('Successful login for: ' + response.name);
-        document.getElementById('status').innerHTML =
-            'Thanks for logging in, ' + response.name + '!';
+        window.alert('Thanks for logging in, ' + response.name + '!');
     });
 }
