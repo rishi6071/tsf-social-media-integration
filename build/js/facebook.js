@@ -49,6 +49,9 @@ const loginWithFacebook = () => {
                 icon: 'warning'
             });
         }
+
+        // Redirecting to User Info Box
+        location.href = `${location.href.substr(0, 44)}`;
     });
 }
 
@@ -64,9 +67,6 @@ const logoutFromFacebook = () => {
         document.querySelector('#logout_fb').style.display = "none";
         document.querySelector('#signin_user').style.display = "block";
         document.querySelector('#user_info').style.display = "block";
-
-        // Redirecting to User Info Box
-        location.href = `${location.href.substr(0, 44)}/#user_info_box`;
     });
 }
 
